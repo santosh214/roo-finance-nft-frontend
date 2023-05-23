@@ -1,0 +1,675 @@
+/* *::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  background: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #0047FF;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #0047FF;
+} */
+
+.react-responsive-modal-root {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.react-responsive-modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.react-responsive-modal-container {
+  height: 100%;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+}
+
+/* Used to trick the browser to center the modal content properly  */
+.react-responsive-modal-containerCenter:after {
+  width: 0;
+  height: 100%;
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.react-responsive-modal-modal {
+  max-width: 1000px;
+  min-width: 800px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  background: #16182d;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+  margin: 1.2rem;
+  padding: 35px 25px 25px;
+  position: relative;
+  overflow-y: auto;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.react-responsive-modal-closeButton {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: #fff;
+  display: flex;
+}
+
+.react-responsive-modal-modal .stake_popup_btn button {
+  border-radius: 10px;
+}
+
+.react-responsive-modal-modal .card.project-card.prev-project-card {
+  background-color: #00000069;
+  padding: 14px;
+  box-shadow: 0px 0px 5px -1px #a2a2a2;
+  border-radius: 10px;
+  height: calc(100% - 25px);
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card.project-card.prev-project-card .select_wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0047ff40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-responsive-modal-modal
+  .card.project-card.prev-project-card
+  .select_wrapper
+  p {
+  color: #ffffff;
+  font-size: 20px;
+  background-color: #0047ff;
+  padding: 1px 10px;
+  border-radius: 8px;
+}
+
+.react-responsive-modal-modal
+  .card.project-card.prev-project-card
+  img.card_img {
+  width: 100%;
+  height: auto;
+}
+
+.react-responsive-modal-modal .card.project-card.prev-project-card .content h4 {
+  text-align: left;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.react-responsive-modal-modal .card.project-card.prev-project-card .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  margin-bottom: 5px;
+}
+
+.react-responsive-modal-modal
+  .card.project-card.prev-project-card
+  .content
+  span {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.react-responsive-modal-modal .row.stack_row_box {
+  max-height: 300px;
+  min-height: 85px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 15px;
+  margin-top: 30px;
+}
+
+.react-responsive-modal-modal button.react-responsive-modal-closeButton {
+  background-color: transparent;
+  top: 18px;
+  right: 20px;
+}
+
+.react-responsive-modal-modal button.react-responsive-modal-closeButton:focus {
+  outline: none;
+}
+
+.react-responsive-modal-modal button.react-responsive-modal-closeButton svg {
+  fill: #ffffff;
+}
+
+@keyframes react-responsive-modal-overlay-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes react-responsive-modal-overlay-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes react-responsive-modal-modal-in {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes react-responsive-modal-modal-out {
+  0% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+}
+
+.previous_launches_list_wrapper .project-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input.admin_upload_input[type='file'] {
+  display: none;
+}
+
+.admin_upload_label {
+  display: initial;
+  background-color: #0047ff;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+img.uploaded_image {
+  width: 100px;
+  display: block;
+  border: 5px solid #0047ff;
+  border-radius: 10px;
+  margin-top: 24px;
+}
+
+section.wallet-connect-area .card.single-wallet {
+  background-color: #000000;
+}
+
+body.modal-open > .modal-backdrop.fade.show {
+  display: none;
+}
+
+.tab {
+  width: 100%;
+}
+
+.tab-headers div {
+  width: 100%;
+}
+
+.active .inner_box {
+  width: 200% !important;
+}
+
+.tab h2 {
+  text-align: center;
+}
+
+.inner_box .finished {
+  position: relative;
+  left: -50%;
+}
+
+/* span.time_part {
+  display: block !important;
+  position: relative;
+  top: 35px;
+  right: 47px;
+  font-size: 24px;
+  letter-spacing: 2px;
+} */
+.staking-area .single-accordion-item .staking-btn span.time_part,
+.staking-area .single-accordion-item .staking-btn span.complete_countdown_text {
+  display: block;
+  font-size: 25px;
+  margin-top: 15px;
+}
+
+section.staking-area .tab_header_inner {
+  border-bottom: none;
+  margin-bottom: 50px;
+}
+
+section.staking-area .tab_header_inner li.nav-item .nav-link {
+  background-color: transparent;
+  border: 2px solid #0047ff;
+  color: #0047ff;
+  padding: 10px 24px 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin-left: 16px;
+}
+
+section.staking-area .tab_header_inner li.nav-item .nav-link.active {
+  background-color: #0047ff;
+  border: 2px solid #0047ff;
+  color: #ffffff;
+}
+
+input::-webkit-calendar-picker-indicator {
+  filter: invert(10);
+}
+.dropzone.admin_form_dropzone p.admin_dropzone {
+  margin-top: 0;
+  text-align: center;
+  border: 1px dashed #9ca0d2;
+  padding: 40px 10px 40px;
+}
+
+.dropzone.admin_form_dropzone p.admin_dropzone svg {
+  border: 1px solid;
+  padding: 5px;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  margin-top: 12px;
+}
+
+.drag_drog.admin_form_dropzone_wrapper .upload_img_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.drag_drog.admin_form_dropzone_wrapper .upload_img_wrapper > span {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  position: relative;
+}
+
+.drag_drog.admin_form_dropzone_wrapper
+  .upload_img_wrapper
+  > span
+  img.uploaded_image {
+  margin-top: 0;
+}
+
+.drag_drog.admin_form_dropzone_wrapper .upload_img_wrapper > span svg {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 12px;
+  height: 12px;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 3px;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  transform: rotate(45deg);
+}
+section.stack_two_new_list .stackCardWrapper {
+  background-color: #15172c;
+  border-radius: 30px;
+  padding: 30px 30px 30px;
+}
+section.stack_two_new_list .stackCardWrapper button.staking-btn {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #9ca0d2;
+}
+section.stack_two_new_list .stackCardWrapper button.staking-btn:focus {
+  outline: none;
+}
+section.stack_two_new_list .stackCardWrapper button.staking-btn:hover {
+  cursor: default;
+}
+section.stack_two_new_list
+  .stackCardWrapper
+  button.staking-btn
+  img.avatar-max-lg {
+  border-radius: 10px;
+}
+section.stack_two_new_list .stackCardWrapper button.staking-btn .content h4 {
+  color: #ffffff;
+  font-size: 26px;
+}
+section.stack_two_new_list
+  .stackCardWrapper
+  button.staking-btn
+  .content
+  > span.symbol {
+  color: #9ca0d2;
+  font-size: 20px;
+  font-weight: 800;
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+section.stack_two_new_list
+  .stackCardWrapper
+  button.staking-btn
+  .content
+  > span.address {
+  color: #9ca0d2;
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+}
+section.stack_two_new_list
+  .stackCardWrapper
+  button.staking-btn
+  .content
+  > p.description {
+  color: #9ca0d2;
+  margin-top: 6px;
+  font-size: 16px;
+}
+section.stack_two_new_list .stackCardWrapper button.staking-btn span.time_data {
+  display: block;
+  color: #9ca0d2;
+  font-size: 18px;
+  font-weight: 500;
+}
+section.stack_two_new_list
+  .stackCardWrapper
+  button.staking-btn
+  span.complete_countdown_text,
+section.stack_two_new_list .stackCardWrapper button.staking-btn span.time_part {
+  display: block;
+  color: #9ca0d2;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+section.stack_two_new_list .stackCardWrapper .collapse.show {
+  padding-top: 25px;
+}
+.previous_launches_list_wrapper .project-content .item-header img {
+  margin-right: 20px;
+}
+.previous_launches_list_wrapper
+  .project-content
+  .item-header
+  .card_img_content
+  h4 {
+  color: #ffffff;
+  font-size: 26px;
+}
+.previous_launches_list_wrapper
+  .project-content
+  .item-header
+  .card_img_content
+  span.symbol {
+  color: #9ca0d2;
+  font-size: 20px;
+  font-weight: 800;
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.previous_launches_list_wrapper
+  .project-content
+  .item-header
+  .card_img_content
+  p.description {
+  color: #9ca0d2;
+  margin-top: 6px;
+  font-size: 16px;
+}
+.previous_launches_list_wrapper
+  .project-content
+  .item-header
+  .card_img_content
+  > span.address {
+  color: #9ca0d2;
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+}
+section.staking-area .card.project-card.prev-project-card {
+  margin-bottom: 20px;
+}
+section.loader_sec .loader_wrapper {
+  text-align: center;
+}
+
+section.stack_two_new_list
+  .stackCardWrapper
+  input.rewardDurationInput::placeholder {
+  font-size: 15px;
+}
+section.stack_two_new_list .stackCardWrapper input.rewardDurationInput {
+  width: 67%;
+  margin-top: 14px;
+  border: 2px solid #2d24c2;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #ffffff;
+}
+section.stack_two_new_list .stackCardWrapper button.rewardDurationBtn {
+  width: 67%;
+}
+section.stack_two_new_list
+  .stackCardWrapper
+  button.rewardDurationBtn
+  .spinner-border {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+section.loader_sec.stakingPool_loader {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.myBorder {
+  overflow: hidden;
+  text-align: center;
+}
+
+.myBorder:before,
+.myBorder:after {
+  background-color: #ffffff;
+  content: '  ';
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 38%;
+}
+@media screen and (min-width: 600px) {
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+    background: #000000;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #0047ff;
+    border-radius: 10px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: #0047ff;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .menu .navbar-nav .nav-item span.nav-link:first-child a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f5f5f5;
+  }
+  section.stack_two_new_list .stackCardWrapper input.rewardDurationInput {
+    width: 77%;
+  }
+  section.stack_two_new_list .stackCardWrapper button.rewardDurationBtn {
+    width: 77%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .react-responsive-modal-modal {
+    max-width: 100%;
+    min-width: auto;
+    width: 90%;
+  }
+
+  .react-responsive-modal-modal .row.stack_row_box {
+    max-height: 400px;
+  }
+
+  section.stack_two_new_list .stackCardWrapper input.rewardDurationInput {
+    width: 100%;
+  }
+  section.stack_two_new_list .stackCardWrapper button.rewardDurationBtn {
+    width: 100%;
+  }
+  section.stack_two_new_list .stackCardWrapper button.rewardDurationBtn {
+    padding: 16px 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .react-responsive-modal-modal {
+    max-width: 100%;
+    min-width: auto;
+    width: 90%;
+  }
+
+  .react-responsive-modal-modal .row.stack_row_box {
+    max-height: 400px;
+  }
+  section.stack_two_new_list
+    .stackCardWrapper
+    .collapse.show
+    .card-body
+    .single-staking-item.input-box {
+    margin-bottom: 30px;
+  }
+  section.stack_two_new_list
+    .stackCardWrapper
+    .collapse.show
+    .card-body
+    .single-staking-item.input-box:last-child {
+    margin-bottom: 0;
+  }
+
+  section.stack_two_new_list .stackCardWrapper .collapse.show .card-body {
+    padding: 0;
+  }
+  section.stack_two_new_list
+    .stackCardWrapper
+    button.staking-btn
+    img.avatar-max-lg {
+    margin-bottom: 10px;
+  }
+  section.staking-area .previous_launches_list_wrapper .project-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  section.staking-area
+    .previous_launches_list_wrapper
+    .project-content
+    .item-header {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+  section.staking-area .card.project-card.prev-project-card {
+    align-items: flex-start;
+  }
+  section.staking-area
+    .previous_launches_list_wrapper
+    .project-content
+    .item-header
+    img {
+    margin-bottom: 15px;
+  }
+  section.staking-area
+    .previous_launches_list_wrapper
+    .project-content
+    .single-item {
+    margin-top: 15px;
+  }
+  section.stack_two_new_list .stackCardWrapper button.rewardDurationBtn {
+    padding: 16px 20px;
+    width: 100%;
+  }
+  .header ul.navbar-nav.action .nav-item li.custom-border {
+    font-size: 12px;
+    white-space: nowrap;
+    font-weight: 100;
+  }
+}
